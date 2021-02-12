@@ -10,7 +10,7 @@ const Forgot = props => {
 
     const [email, setEmail] = useState('')
     const [errors, setErrors] = useState('')
-    const [{isLoading, response, error}, doFetch] = useFetch({apiUrl});
+    const [{isLoading}, doFetch] = useFetch({apiUrl});
 
     
     const handleSubmit = (event) => {
@@ -30,7 +30,7 @@ const Forgot = props => {
         }
     }
 
-    const validate = (email, password, passwordConfirm) => {
+    const validate = (email) => {
         // hold email error
        const errors = {};
        if (

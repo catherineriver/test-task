@@ -19,8 +19,6 @@ const Auth = props => {
     const [passwordShown, setPasswordShown] = useState(false);
     const [passwordConfirmShown, setPasswordConfirmShown] = useState(false);
     const [{isLoading}, doFetch] = useFetch({apiUrl});
-
-    console.log(passwordConfirm)
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -81,6 +79,7 @@ const Auth = props => {
                     <label>Password</label>
                     <input type={passwordShown ? "text" : "password"} 
                         value={password} 
+                        autoComplete="on"
                         onChange={e=> setPassword(e.target.value)}/>
                     {password && (
                         <div className="show-btn" onClick={togglePasswordVisiblity}>
@@ -104,6 +103,7 @@ const Auth = props => {
                         <label>Re-type password</label>
                         <input type={passwordConfirmShown ? "text" : "password"} 
                             value={passwordConfirm} 
+                            autoComplete="on"
                             onChange={e=> setPasswordConfirm(e.target.value)}
                         />
                         {errors.password &&( <div className="form-error">{errors.password}</div>)}
