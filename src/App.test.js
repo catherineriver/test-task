@@ -1,15 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import store from './app/store';
 import App from './App';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
+const history = createBrowserHistory();
+
+it('should take a snapshot', () => {
+  const { asFragment } = render(
+    <Router history={history}>
+      <App /> 
+    </Router>
   );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+  expect(asFragment(<App />)).toMatchSnapshot()
 });

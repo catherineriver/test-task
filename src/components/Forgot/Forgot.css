@@ -1,0 +1,16 @@
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.links span {
+    margin: 0 10px;
+}
+
+.links a {
+    color: #4173BA;
+    text-decoration: none;
+}
