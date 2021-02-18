@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
+import validate from '../../modules/validation';
 import { Link } from 'react-router-dom';
 import './Forgot.css';
 
@@ -29,17 +30,6 @@ const Forgot = props => {
                 }
             })
         }
-    }
-
-    const validate = (email) => {
-        // hold email error
-        const errors = {};
-        if (
-            !/\S+@\S+\.\S+/.test(email)
-        ) {
-            errors.email = `That doesn't look to be a valid email address. Please review and try again.`;
-        }
-        return errors;
     }
 
     return (<div className="container">
