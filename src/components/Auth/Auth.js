@@ -18,7 +18,7 @@ const Auth = props => {
     const [errors, setErrors] = useState('')
     const [passwordShown, setPasswordShown] = useState(false);
     const [passwordConfirmShown, setPasswordConfirmShown] = useState(false);
-    const [{ isLoading }, doFetch] = useFetch({ apiUrl });
+    const [{ isLoading }, doFetch] = useFetch(apiUrl);
 
     useEffect(() => { setErrors(false) }, [isLogin])
 
