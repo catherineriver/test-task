@@ -5,7 +5,7 @@ import {
 import axios from 'axios';
 
 const useFetch = (url) => {
-    const BASE_URL = 'https://localhost/'
+    const BASE_URL = 'https://localhost:3000/'
     const [isLoading, setIsLoading] = useState(false);
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
